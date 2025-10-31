@@ -6,6 +6,7 @@ import NewProduct from './pages/products/new';
 import ProductDetails from './pages/products/[id]';
 import LoginForm from './components/login-form';
 import {Package} from "lucide-react";
+import Dashboard from './pages/dashboard/page';
 
 // LOGIN PAGE/ LANDING
 
@@ -32,6 +33,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/products/new" element={<NewProduct />} />
         <Route path="/products/edit" element={<EditProduct />} />
         <Route path="/products/:id" element={<ProductDetails />} />
