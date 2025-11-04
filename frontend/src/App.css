@@ -206,3 +206,86 @@
   flex-direction: row;
   align-items: center;
 }
+
+.overview{
+  width: 90%; 
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+
+.card{
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+    0 1px 1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 1.3rem;
+  flex: 1;
+}
+
+.subtitle {
+  font-family: "Tatsuki";
+  font-size: 2rem;
+  color: grey;
+}
+
+.cardContent{
+  font-family: 'Tatsuki';
+  font-weight: 700;
+  font-size: 4.3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.stocks{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product{
+  width: 90%;
+}
+
+.productLog{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+
+.controlBar{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+    0 1px 1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 13rem;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 1.6rem;
+  font-family: "Tatsuki";
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.searchInput:focus {
+  border-color: var(--main-color);
+}
