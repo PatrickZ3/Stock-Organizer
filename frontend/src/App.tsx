@@ -7,7 +7,8 @@ import ProductDetails from './pages/products/[id]';
 import LoginForm from './components/login-form';
 import {Package} from "lucide-react";
 import Dashboard from './pages/dashboard/page';
-
+import Transactions from './pages/transactions/page';
+import CheckOut from './pages/checkout/page';
 // LOGIN PAGE/ LANDING
 
 function Home() {
@@ -37,6 +38,8 @@ function App() {
         <Route path="/products/new" element={<NewProduct />} />
         <Route path="/products/edit" element={<EditProduct />} />
         <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/transactions" element={<Transactions />} />
+        <Route path="/checkout" element={<CheckOut />} />
         <Route path="*" element={<div>404 - Page Not Found</div>} />
       </Routes>
     </div>
