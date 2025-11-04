@@ -2,23 +2,26 @@ import React, { useState } from 'react';
 import { OverviewProps } from '../../types/items';
 import AddProduct from '../buttons/add-product-button';
 import SearchBar from '../buttons/search-bar';
-import Category from '../buttons/category';
 import Status from '../buttons/status';
 
 function Card({ data }: OverviewProps) {
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedStatus, setSelectedStatus] = useState('All');
 
-  const filteredData = data.filter((item)=>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase()) || item.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredData = data.filter((item) => {
+    const matchesSearches = item.name.toLowerCase().includes(searchTerm.toLowerCase()) || item.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStatus = selectedStatus === 'All' || item.status === selectedStatus;
+    return matchesSearches && matchesStatus
+  }
+);
+  const statuses = Array.from(new Set(data.map((item) => item.status).filter(Boolean)));
 
   return (
     <div>
       <div className='controlBar'>
-        <SearchBar onSearch={setSearchTerm}/>
-        <Status />
-        <Category />
+        <SearchBar onSearch={setSearchTerm} />
+        <Status statuses={statuses} onSelectStatus={setSelectedStatus}/>
         <AddProduct />
       </div>
       <div className='productLog'>

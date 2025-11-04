@@ -44,7 +44,7 @@ const data = [
     description:
       "RGB mechanical keyboard with hot-swappable switches and customizable lighting profiles.",
     quantity: 28,
-    status: "active",
+    status: "inactive",
     created_at: "2024-12-20T08:45:00Z",
     updated_at: "2025-01-14T09:10:00Z",
   },
@@ -55,7 +55,7 @@ const data = [
     description:
       "Adjustable standing desk with electric height control and memory presets.",
     quantity: 7,
-    status: "active",
+    status: "archived",
     created_at: "2024-11-10T10:10:00Z",
     updated_at: "2025-01-15T10:45:00Z",
   },

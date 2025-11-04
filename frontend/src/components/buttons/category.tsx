@@ -1,13 +1,21 @@
 import React from 'react';
-import { Button } from 'react-bootstrap'; 
+import { Dropdown } from 'react-bootstrap'; 
+import { Funnel, ChevronDown } from 'lucide-react';
 
 function Category() {
 
   return (
-   <div>
-    <Button className='coButton'>Category</Button>
-      
-   </div>
+   <Dropdown>
+        <Dropdown.Toggle className='dropDown'>
+            <Funnel size={16}/> Category <ChevronDown size={16} />
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu className='dropDownItem'>
+            <Dropdown.Item>All</Dropdown.Item>
+            
+        </Dropdown.Menu>
+
+   </Dropdown>
   );
 }
 
