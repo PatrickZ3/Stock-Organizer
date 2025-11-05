@@ -269,13 +269,14 @@
   text-align: left;
   padding: 1.3rem;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
 }
 
 .searchInput {
   flex: 1;
-  min-width: 20rem;
+  min-width: 18rem;
   padding: 10px 14px;
   border-radius: 6px;
   border: 1px solid #d1d5db;
@@ -297,13 +298,15 @@
   padding: 10px 14px;
   cursor: pointer;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
   text-align: center;
   gap: 2rem;
   font-size: 1.6rem;
   font-family: "Tatsuki";
-  min-width: 11rem;
+
+  min-width: 110px;
 }
 
 .dropDown:hover{
@@ -312,7 +315,7 @@
 }
 
 .dropDownItem {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -324,6 +327,25 @@
   background-color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
+}
+
+
+.dropDownItem .dropdown-item {
+  font-family: "Tatsuki";
+  font-size: 1.6rem;
+  color: #333 !important;
+  padding: 0.7rem 0 !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-align: center;
+}
+
+.dropdown-item:hover{
+  background-color: #f2f2f2 !important;
+  color: black !important;
+}
+
+.dropdown-menu:not(.show) {
+  display: none !important;
 }
 
 

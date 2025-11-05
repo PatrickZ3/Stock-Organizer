@@ -16,7 +16,7 @@ function Card({ data }: OverviewProps) {
   }
 );
   const statuses = Array.from(new Set(data.map((item) => item.status).filter(Boolean)));
-
+  console.log("Currently selected status:", selectedStatus);
   return (
     <div>
       <div className='controlBar'>
