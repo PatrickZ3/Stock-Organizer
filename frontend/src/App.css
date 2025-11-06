@@ -305,8 +305,8 @@
   gap: 2rem;
   font-size: 1.6rem;
   font-family: "Tatsuki";
-
-  min-width: 110px;
+  min-width: 175px;
+  position: relative;
 }
 
 .dropDown:hover{
@@ -333,10 +333,12 @@
 .dropDownItem .dropdown-item {
   font-family: "Tatsuki";
   font-size: 1.6rem;
+  border-radius: 6px;
   color: #333 !important;
   padding: 0.7rem 0 !important;
   transition: background-color 0.2s ease, color 0.2s ease;
   text-align: center;
+  width: 90%;
 }
 
 .dropdown-item:hover{
