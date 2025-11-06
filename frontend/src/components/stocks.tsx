@@ -12,6 +12,8 @@ const data = [
     description:
       "Ergonomic wireless mouse with adjustable DPI and 6 programmable buttons. Long battery life up to 18 months.",
     quantity: 45,
+    price: 20.00,
+    category: "Electronic",
     status: "active",
     created_at: "2024-12-01T10:00:00Z",
     updated_at: "2025-01-15T12:30:00Z",
@@ -23,6 +25,8 @@ const data = [
     description:
       "Adjustable ergonomic office chair with lumbar support, mesh back, and 360-degree swivel.",
     quantity: 12,
+    price: 100.00,
+    category: "Furniture",
     status: "active",
     created_at: "2024-11-15T09:00:00Z",
     updated_at: "2025-01-14T16:45:00Z",
@@ -33,6 +37,8 @@ const data = [
     name: "USB-C Cable",
     description: "6ft USB-C charging cable supporting fast charging up to 100W.",
     quantity: 3,
+    price: 15.00,
+    category: "Electronic",
     status: "active",
     created_at: "2024-12-10T14:20:00Z",
     updated_at: "2025-01-13T11:00:00Z",
@@ -44,6 +50,8 @@ const data = [
     description:
       "RGB mechanical keyboard with hot-swappable switches and customizable lighting profiles.",
     quantity: 28,
+    price: 150.00,
+    category: "Electronic",
     status: "inactive",
     created_at: "2024-12-20T08:45:00Z",
     updated_at: "2025-01-14T09:10:00Z",
@@ -55,6 +63,8 @@ const data = [
     description:
       "Adjustable standing desk with electric height control and memory presets.",
     quantity: 7,
+    price: 2000.00,
+    category: "Furniture",
     status: "archived",
     created_at: "2024-11-10T10:10:00Z",
     updated_at: "2025-01-15T10:45:00Z",
