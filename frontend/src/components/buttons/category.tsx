@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import { Dropdown } from 'react-bootstrap'; 
+import React, { useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
 import { Funnel, ChevronDown } from 'lucide-react';
 
-interface categoryProp{
+interface categoryProp {
   categories: string[];
-  onSelectCategory: (category:string) => void;
+  onSelectCategory: (category: string) => void;
 }
 
-function Category({categories, onSelectCategory} : categoryProp) {
+function Category({ categories, onSelectCategory }: categoryProp) {
 
   const [show, setShow] = useState(false);
 
@@ -27,22 +27,22 @@ function Category({categories, onSelectCategory} : categoryProp) {
 
 
   return (
-   <Dropdown show={show} onToggle={handleToggle} autoClose="outside">
+    <div>
+      <Dropdown show={show} onToggle={handleToggle} autoClose="outside" >
         <Dropdown.Toggle className='dropDown' id="category-dropdown" onClick={toggleDropdown}>
-            <Funnel size={16}/> Category <ChevronDown size={16} />
+          <Funnel size={16} /> Category <ChevronDown size={16} />
         </Dropdown.Toggle>
-
-        <Dropdown.Menu className='dropDownItem' onClick={() => setShow(false)}>
-        <Dropdown.Item onClick={() => handleSelect('All')}>All</Dropdown.Item>
-            {categories.map((category, index) => (
-              <Dropdown.Item key={index} onClick={() => handleSelect(category)}>
-                {category}
-              </Dropdown.Item>
-            ))}
-            
+        <Dropdown.Menu className='dropDownItemCategory' onClick={() => setShow(false)}>
+          <Dropdown.Item onClick={() => handleSelect('All')}>All</Dropdown.Item>
+          {categories.map((category, index) => (
+            <Dropdown.Item key={index} onClick={() => handleSelect(category)}>
+              {category}
+            </Dropdown.Item>
+          ))}
         </Dropdown.Menu>
+      </Dropdown>
+    </div>
 
-   </Dropdown>
   );
 }
 

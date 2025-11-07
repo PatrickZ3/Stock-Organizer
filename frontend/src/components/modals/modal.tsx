@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/navbar';
 
-function NewProduct() {
+function Modal() {
     return (
         <div>
 
@@ -15,4 +15,4 @@ function NewProduct() {
     );
 }
 
-export default NewProduct;
+export default Modal;

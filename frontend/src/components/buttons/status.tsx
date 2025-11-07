@@ -24,12 +24,12 @@ function Status({ statuses, onSelectStatus}: StatusProps) {
       };
       
   return (
-   <Dropdown show={show} onToggle={handleToggle} autoClose="outside">
+   <Dropdown show={show} onToggle={handleToggle} autoClose="outside" className='statusContainer'>
         <Dropdown.Toggle className='dropDown' id="status-dropdown" onClick={toggleDropdown}>
             Status <ChevronDown size={16} />
         </Dropdown.Toggle>
 
-        <Dropdown.Menu className='dropDownItem' align="start" onClick = {() => setShow(false)}>
+        <Dropdown.Menu className='dropDownItemStatus' align="start" onClick = {() => setShow(false)}>
             <Dropdown.Item onClick={() => handleSelect('All')}>All</Dropdown.Item>
             {statuses.map((status,index) =>(
                 <Dropdown.Item key={index} onClick={() => handleSelect(status)}>
@@ -37,7 +37,6 @@ function Status({ statuses, onSelectStatus}: StatusProps) {
                 </Dropdown.Item>
             ) )}
         </Dropdown.Menu>
-
    </Dropdown>
   );
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Package } from 'lucide-react';
 import TransactionsButton from './buttons/transactions-button';
 import CheckOutButton from './buttons/check-out-button';

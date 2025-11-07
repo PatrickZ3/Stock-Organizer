@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { OverviewProps } from '../../types/items';
 import AddProduct from '../buttons/add-product-button';
-import SearchBar from '../buttons/search-bar';
+import SearchBar from '../input/search-bar';
 import Status from '../buttons/status';
 import Category from '../buttons/category';
 
@@ -39,13 +39,12 @@ function Card({ data }: OverviewProps) {
               <div className='cardName'>{item.name}</div>
               <div className='cardStatus'>{item.status}</div>
             </div>
-            <div className='cardDescription'>
-              
+            <div className='cardDescription'> 
               <div>{item.description}</div>
             </div>
-            <div className='cardQuantity'>
-            <div>Quantity</div>
-              <div>{item.quantity}</div>
+            <div className='cardItem'>
+            <div className='cardName'>Quantity</div>
+              <div className='cardQuantity'>{item.quantity} Units</div>
             </div>
             <div className='cardPrice'>
             <div>Price</div>
