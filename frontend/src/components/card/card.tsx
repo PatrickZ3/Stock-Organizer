@@ -19,7 +19,7 @@ function Card({ data }: OverviewProps) {
   }
   );
   const statuses = Array.from(new Set(data.map((item) => item.status).filter(Boolean)));
-  
+
   const categories = Array.from(new Set(data.map((item) => item.category).filter(Boolean)));
 
   console.log("Currently selected status:", selectedStatus);
@@ -28,34 +28,44 @@ function Card({ data }: OverviewProps) {
     <div>
       <div className='controlBar'>
         <SearchBar onSearch={setSearchTerm} />
-        <Category categories={categories} onSelectCategory={setSelectedCategories}/>
+        <Category categories={categories} onSelectCategory={setSelectedCategories} />
         <Status statuses={statuses} onSelectStatus={setSelectedStatus} />
         <AddProduct />
       </div>
       <div className='productLog'>
         {filteredData.map((item, index) => (
           <div key={item.id} className='card'>
-            <div className="cardItem">
+            <div className="cardHeader">
               <div className='cardName'>{item.name}</div>
               <div className='cardStatus'>{item.status}</div>
             </div>
-            <div className='cardDescription'> 
+            <div className='cardDescription'>
               <div>{item.description}</div>
             </div>
             <div className='cardItem'>
-            <div className='cardName'>Quantity</div>
+              <div className='cardName'>Quantity</div>
               <div className='cardQuantity'>{item.quantity} Units</div>
             </div>
-            <div className='cardPrice'>
-            <div>Price</div>
-              <div>{item.price}</div>
+            <div className='cardItem'>
+              <div className='cardName'>Price</div>
+              <div className='cardPrice'>$ {item.price}</div>
             </div>
-            <div className='cardCategory'>
-            <div>Category</div>
-              <div>{item.category}</div>
+            <div className='cardItem'>
+              <div className='cardName'>Category</div>
+              <div className='cardCategory'>{item.category}</div>
             </div>
-            <div className='cardUpdated'>
-              <div>{item.updated_at}</div>
+            <div className='cardFooter'>
+              <div className='cardDivider'></div>
+              <div className='cardItem'>
+                <div className='cardDate'>
+                  {new Date(item.updated_at).toLocaleDateString('en-US',{
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                  </div>
+              </div>
+
             </div>
 
 

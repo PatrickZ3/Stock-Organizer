@@ -227,7 +227,10 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: left;
   padding: 1.3rem;
-  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
 .subtitle {
@@ -401,18 +404,27 @@
   color: white;
 }
 
+.cardHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
 .cardItem{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+  /* margin-top: 0.9rem; */
 }
 
 .cardName{
   display: flex;
   justify-content: flex-start;
   font-family: "Tatsuki";
-  font-weight: 800;
   font-size: 2rem;
 }
 
@@ -427,7 +439,7 @@
   font-size: 1.7rem;
   border: 2px solid var(--active-outline);
   background-color: var(--active-bg);
-  padding: 0.2rem;
+  padding: 0.2rem 0.5rem;
   border-radius: var(--border-radius);
   color: var(--active-text);
   align-items: center;
@@ -447,4 +459,39 @@
   font-weight: 800;
   font-size: 1.7rem;
   color: var(--quantity-text);
+}
+
+.cardPrice{
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Tatsuki";
+  margin-top: 1rem;
+  font-weight: 800;
+  font-size: 1.7rem;
+}
+
+.cardCategory{
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Tatsuki";
+  font-size: 1.7rem;
+  background-color: rgb(234, 234, 234);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--border-radius);
+  color: black;
+  align-items: center;
+}
+
+.cardDivider{
+  border-top: 1px solid #e5e7eb; 
+  width: 100%;
+
+}
+
+.cardDate {
+  font-family: "Tatsuki";
+  font-size: 1.5rem;
+  color: #6b7280;
+  text-align: left;
+
 }
