@@ -4,6 +4,12 @@
   --active-outline: #83e28e;
   --active-bg: #c1f0c8;
   --active-text:#12501a;
+  --inactive-outline: #f5a5a5;
+  --inactive-bg: #ffe5e5;
+  --inactive-text:#b91c1c;
+  --archived-outline:  #d1d5db;
+  --archived-bg: #f3f4f6;
+  --archived-text:#6b7280;
   --quantity-text:#47d359;
   --border-radius: 8px;
 }
@@ -345,7 +351,6 @@
   font-size: 1.7rem;
   border-radius: var(--border-radius);
   color: #333 ;
-  padding: 0.7rem 0 ;
   transition: background-color 0.2s ease, color 0.2s ease;
   text-align: center;
   padding: 10px 6px;
@@ -370,13 +375,10 @@
   font-size: 1.7rem;
   border-radius: var(--border-radius);
   color: #333;
-  padding: 0.7rem 0;
   transition: background-color 0.2s ease, color 0.2s ease;
   text-align: center;
   padding: 10px 30px;
 }
-
-
 
 .dropdown-item:hover{
   background-color: #f2f2f2 ;
@@ -418,7 +420,6 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  /* margin-top: 0.9rem; */
 }
 
 .cardName{
@@ -437,12 +438,29 @@
   justify-content: flex-end;
   font-family: "Tatsuki";
   font-size: 1.7rem;
-  border: 2px solid var(--active-outline);
-  background-color: var(--active-bg);
+  
   padding: 0.2rem 0.5rem;
   border-radius: var(--border-radius);
   color: var(--active-text);
   align-items: center;
+}
+
+.cardStatus.active{
+  border: 2px solid var(--active-outline);
+  background-color: var(--active-bg);
+  color: var(--active-text);
+}
+
+.cardStatus.inactive{
+  border: 2px solid var(--inactive-outline);
+  background-color: var(--inactive-bg);
+  color: var(--inactive-text);
+}
+
+.cardStatus.archived{
+  border: 2px solid var(--archived-outline);
+  background-color: var(--archived-bg);
+  color: var(--archived-text);
 }
 
 .cardDescription{
@@ -455,7 +473,6 @@
   display: flex;
   justify-content: flex-end;
   font-family: "Tatsuki";
-  margin-top: 1rem;
   font-weight: 800;
   font-size: 1.7rem;
   color: var(--quantity-text);
@@ -465,7 +482,6 @@
   display: flex;
   justify-content: flex-end;
   font-family: "Tatsuki";
-  margin-top: 1rem;
   font-weight: 800;
   font-size: 1.7rem;
 }
@@ -493,5 +509,5 @@
   font-size: 1.5rem;
   color: #6b7280;
   text-align: left;
-
+  margin-top: 0.5rem;
 }

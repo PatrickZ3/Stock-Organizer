@@ -1,22 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap'; 
 import { Plus } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import ProductModal from '../modals/productModal';
 
 function AddProduct() {
-
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate('/Products/new')
-  };
+  const [showModal, setShowModal] = useState(false);
 
   return (
    <div>
-    <Button className='addButton' onClick={handleClick}>
+    <Button className='addButton' onClick={() => setShowModal(true)}>
      <Plus size={16}/>add Product
-      </Button>
-      
+      </Button>   
+      <ProductModal 
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+      />
    </div>
   );
 }

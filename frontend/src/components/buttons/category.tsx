@@ -27,7 +27,7 @@ function Category({ categories, onSelectCategory }: categoryProp) {
 
 
   return (
-    <div>
+
       <Dropdown show={show} onToggle={handleToggle} autoClose="outside" >
         <Dropdown.Toggle className='dropDown' id="category-dropdown" onClick={toggleDropdown}>
           <Funnel size={16} /> Category <ChevronDown size={16} />
@@ -41,7 +41,7 @@ function Category({ categories, onSelectCategory }: categoryProp) {
           ))}
         </Dropdown.Menu>
       </Dropdown>
-    </div>
+
 
   );
 }

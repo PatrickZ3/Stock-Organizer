@@ -36,8 +36,8 @@ function Card({ data }: OverviewProps) {
         {filteredData.map((item, index) => (
           <div key={item.id} className='card'>
             <div className="cardHeader">
-              <div className='cardName'>{item.name}</div>
-              <div className='cardStatus'>{item.status}</div>
+              <div className='cardName' style={{fontWeight:800}}>{item.name}</div>
+              <div className={`cardStatus ${item.status.toLowerCase()}`}>{item.status}</div>
             </div>
             <div className='cardDescription'>
               <div>{item.description}</div>
