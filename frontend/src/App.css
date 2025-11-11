@@ -244,6 +244,7 @@
   justify-content: space-between;
   flex-direction: column;
   gap: 0.9rem;
+  cursor: pointer;
 }
 
 .subtitle {

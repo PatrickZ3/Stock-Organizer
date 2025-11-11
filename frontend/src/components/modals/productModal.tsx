@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 
 interface ProductModalProp {
@@ -18,13 +18,35 @@ interface ProductModalProp {
 function ProductModal({ isOpen, onClose, mode = 'add', initialData }: ProductModalProp) {
     const [formData, setFormData] = useState(
         initialData || {
-        name: '',
-        description: '',
-        quantity: 0,
-        price: 0.0,
-        category: '',
-        status: 'active',
-    });
+            name: '',
+            description: '',
+            quantity: 0,
+            price: 0.0,
+            category: '',
+            status: 'active',
+        });
+
+    useEffect(() => {
+        if (mode === 'edit' && initialData) {
+            setFormData({
+                name: initialData.name || '',
+                description: initialData.description || '',
+                quantity: initialData.quantity || 0,
+                price: initialData.price || 0.0,
+                category: initialData.category || '',
+                status: initialData.status || 'active',
+            });
+        } else if (mode === 'add') {
+            setFormData({
+                name: '',
+                description: '',
+                quantity: 0,
+                price: 0.0,
+                category: '',
+                status: 'active',
+            });
+        }
+    }, [initialData, mode, isOpen])
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>

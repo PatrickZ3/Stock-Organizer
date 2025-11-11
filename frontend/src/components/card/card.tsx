@@ -4,12 +4,16 @@ import AddProduct from '../buttons/add-product-button';
 import SearchBar from '../input/search-bar';
 import Status from '../buttons/status';
 import Category from '../buttons/category';
+import ProductModal from '../modals/productModal';
 
 function Card({ data }: OverviewProps) {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedStatus, setSelectedStatus] = useState('All');
   const [selectedCategories, setSelectedCategories] = useState('All');
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
   const filteredData = data.filter((item) => {
     const matchesSearches = item.name.toLowerCase().includes(searchTerm.toLowerCase()) || item.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -22,6 +26,11 @@ function Card({ data }: OverviewProps) {
 
   const categories = Array.from(new Set(data.map((item) => item.category).filter(Boolean)));
 
+  const handleCardClick = (product: any) => {
+    setSelectedProduct(product);
+    setShowModal(true);
+  }
+
   return (
     <div>
       <div className='controlBar'>
@@ -32,9 +41,9 @@ function Card({ data }: OverviewProps) {
       </div>
       <div className='productLog'>
         {filteredData.map((item, index) => (
-          <div key={item.id} className='card'>
+          <div key={item.id} className='card' onClick={() => handleCardClick(item)}>
             <div className="cardHeader">
-              <div className='cardName' style={{fontWeight:800}}>{item.name}</div>
+              <div className='cardName' style={{ fontWeight: 800 }}>{item.name}</div>
               <div className={`cardStatus ${item.status.toLowerCase()}`}>{item.status}</div>
             </div>
             <div className='cardDescription'>
@@ -56,20 +65,23 @@ function Card({ data }: OverviewProps) {
               <div className='cardDivider'></div>
               <div className='cardItem'>
                 <div className='cardDate'>
-                  {new Date(item.updated_at).toLocaleDateString('en-US',{
+                  {new Date(item.updated_at).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
                   })}
-                  </div>
+                </div>
               </div>
-
             </div>
-
-
           </div>
         ))}
       </div>
+      <ProductModal
+              isOpen={showModal}
+              onClose={() => setShowModal(false)}
+              mode="edit"
+              initialData={selectedProduct}
+            />
     </div>
 
   );

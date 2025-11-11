@@ -21,6 +21,8 @@ function Status({ statuses, onSelectStatus}: StatusProps) {
     const toggleDropdown = () => {
         setShow(prev => !prev);
       };
+
+      
       
   return (
    <Dropdown show={show} onToggle={handleToggle} autoClose="outside" className='statusContainer'>
