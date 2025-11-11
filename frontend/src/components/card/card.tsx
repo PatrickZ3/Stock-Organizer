@@ -22,8 +22,6 @@ function Card({ data }: OverviewProps) {
 
   const categories = Array.from(new Set(data.map((item) => item.category).filter(Boolean)));
 
-  console.log("Currently selected status:", selectedStatus);
-  console.log("Currently selected category:", selectedCategories);
   return (
     <div>
       <div className='controlBar'>

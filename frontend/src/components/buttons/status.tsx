@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap'; 
-import { ChevronDown } from 'lucide-react';
 
 interface StatusProps{
     statuses: string[]
@@ -26,7 +25,7 @@ function Status({ statuses, onSelectStatus}: StatusProps) {
   return (
    <Dropdown show={show} onToggle={handleToggle} autoClose="outside" className='statusContainer'>
         <Dropdown.Toggle className='dropDown' id="status-dropdown" onClick={toggleDropdown}>
-            Status <ChevronDown size={16} />
+            Status
         </Dropdown.Toggle>
 
         <Dropdown.Menu className='dropDownItemStatus' align="start" onClick = {() => setShow(false)}>

@@ -6,7 +6,6 @@ function ProductLog({data} : OverviewProps) {
   console.log("product log", data)
   return (  
     <div className='product'>
-
       <Card data = {data}/>
     </div>
   );

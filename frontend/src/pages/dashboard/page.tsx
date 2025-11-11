@@ -8,7 +8,9 @@ import Stocks from '../../components/stocks';
 function Dashboard() {
   return (
     <div>
+      
         <Navbar  />
+        <div style={{ fontFamily: "Tatsuki", fontWeight: 400, fontSize: "3rem" }}>Product Dashboard</div>
         <Stocks />
     </div>
   );

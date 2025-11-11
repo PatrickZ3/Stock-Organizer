@@ -157,6 +157,7 @@
 .LeftNavBar {
   display: flex;
   align-items: center;
+  padding-left: 2rem;
 }
 
 .LeftNavBarText {
@@ -168,12 +169,16 @@
 .navLogo {
   background-color: var(--main-color);
   color: white;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: var(--border-radius);
   margin: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .navLogo:hover {
@@ -203,6 +208,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 4px 12px 4px 12px;
   cursor: pointer;
+  color: black;
 }
 
 .coButton:hover{
@@ -216,6 +222,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: black;
 }
 
 .overview{
@@ -249,15 +256,15 @@
   font-family: 'Tatsuki';
   font-weight: 700;
   font-size: 4.3rem;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  /* padding-top: 1rem;
+  padding-bottom: 2rem; */
 }
 
 .stocks{
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 2rem 0;
+  padding-bottom: 2rem;
   flex-direction: column;
   align-items: center;
 }
@@ -325,11 +332,13 @@
   font-size: 1.7rem;
   font-family: "Tatsuki";
   position: relative;
+  color: black;
 }
 
 .dropDown:hover{
   background-color: #f2f2f2; 
   border-color: rgba(0, 0, 0, 0.2);
+  color: black;
 }
 
 .dropDownItemStatus {
@@ -427,6 +436,7 @@
   justify-content: flex-start;
   font-family: "Tatsuki";
   font-size: 2rem;
+  color: black;
 }
 
 .statusContainer{
@@ -438,7 +448,6 @@
   justify-content: flex-end;
   font-family: "Tatsuki";
   font-size: 1.7rem;
-  
   padding: 0.2rem 0.5rem;
   border-radius: var(--border-radius);
   color: var(--active-text);
@@ -492,7 +501,7 @@
   font-family: "Tatsuki";
   font-size: 1.7rem;
   background-color: rgb(234, 234, 234);
-  padding: 0.2rem 0.6rem;
+  padding: 0rem 0.6rem;
   border-radius: var(--border-radius);
   color: black;
   align-items: center;

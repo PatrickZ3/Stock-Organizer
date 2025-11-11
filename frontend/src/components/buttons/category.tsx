@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
-import { Funnel, ChevronDown } from 'lucide-react';
+import { Funnel } from 'lucide-react';
 
 interface categoryProp {
   categories: string[];
@@ -30,7 +30,7 @@ function Category({ categories, onSelectCategory }: categoryProp) {
 
       <Dropdown show={show} onToggle={handleToggle} autoClose="outside" >
         <Dropdown.Toggle className='dropDown' id="category-dropdown" onClick={toggleDropdown}>
-          <Funnel size={16} /> Category <ChevronDown size={16} />
+          <Funnel size={16} /> Category
         </Dropdown.Toggle>
         <Dropdown.Menu className='dropDownItemCategory' onClick={() => setShow(false)}>
           <Dropdown.Item onClick={() => handleSelect('All')}>All</Dropdown.Item>

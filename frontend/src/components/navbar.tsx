@@ -14,10 +14,11 @@ function Navbar() {
     return (
         <div className='NavBar'>
             <div className="LeftNavBar">
-                <Package size={24} className="navLogo" onClick={handleClick}/>
+                <div className="navLogo" onClick={handleClick}>
+                    <Package size={24} color="white" strokeWidth={2.5} />
+                </div>
                 <div className="LeftNavBarText">
                     <div style={{ fontFamily: "Tatsuki", fontWeight: 700, fontSize: "2.5rem" }}>Inventory Tracker</div>
-                    <div style={{ fontFamily: "Tatsuki", fontWeight: 400, fontSize: "1.6rem" }}>Product Dashboard</div>
                 </div>
             </div>
             <div className="RightNavBar">
