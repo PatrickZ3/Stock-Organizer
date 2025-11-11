@@ -14,6 +14,7 @@ function AddProduct() {
       <ProductModal 
         isOpen={showModal}
         onClose={() => setShowModal(false)}
+        mode="add"
       />
    </div>
   );

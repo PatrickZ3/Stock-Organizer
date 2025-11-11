@@ -4,14 +4,24 @@ import { Modal, Button, Form } from 'react-bootstrap';
 interface ProductModalProp {
     isOpen: boolean;
     onClose: () => void;
+    mode?: 'add' | 'edit';
+    initialData?: {
+        name: string;
+        description: string;
+        quantity: number;
+        price: number;
+        category: string;
+        status: string;
+    };
 }
 
-function ProductModal({ isOpen, onClose }: ProductModalProp) {
-    const [formData, setFormData] = useState({
+function ProductModal({ isOpen, onClose, mode = 'add', initialData }: ProductModalProp) {
+    const [formData, setFormData] = useState(
+        initialData || {
         name: '',
         description: '',
-        quantity: '',
-        price: '',
+        quantity: 0,
+        price: 0.0,
         category: '',
         status: 'active',
     });
@@ -31,7 +41,7 @@ function ProductModal({ isOpen, onClose }: ProductModalProp) {
     return (
         <Modal show={isOpen} onHide={onClose} centered>
             <Modal.Header closeButton>
-                <Modal.Title>Add New Product</Modal.Title>
+                <Modal.Title>{mode === 'add' ? 'Add New Product' : 'Edit Product'}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
@@ -111,7 +121,7 @@ function ProductModal({ isOpen, onClose }: ProductModalProp) {
                     Cancel
                 </Button>
                 <Button variant="primary" onClick={handleSave}>
-                    Save Product
+                    {mode === 'add' ? 'Save Product' : 'Update Product'}
                 </Button>
             </Modal.Footer>
         </Modal>
