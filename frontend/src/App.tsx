@@ -4,7 +4,6 @@ import Home from './pages/home/page';
 import Dashboard from './pages/dashboard/page';
 import Transactions from './pages/transactions/page';
 import CheckOut from './pages/checkout/page';
-import ProductDetails from './pages/dashboard/[id]';
 // LOGIN PAGE/ LANDING
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="*" element={<div>404 - Page Not Found</div>} />

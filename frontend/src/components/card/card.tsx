@@ -5,6 +5,7 @@ import SearchBar from '../input/search-bar';
 import Status from '../buttons/status';
 import Category from '../buttons/category';
 import ProductModal from '../modals/productModal';
+import { Pencil, Plus } from 'lucide-react';
 
 function Card({ data }: OverviewProps) {
 
@@ -41,7 +42,7 @@ function Card({ data }: OverviewProps) {
       </div>
       <div className='productLog'>
         {filteredData.map((item, index) => (
-          <div key={item.id} className='card' onClick={() => handleCardClick(item)}>
+          <div key={item.id} className='card'>
             <div className="cardHeader">
               <div className='cardName' style={{ fontWeight: 800 }}>{item.name}</div>
               <div className={`cardStatus ${item.status.toLowerCase()}`}>{item.status}</div>
@@ -63,13 +64,23 @@ function Card({ data }: OverviewProps) {
             </div>
             <div className='cardFooter'>
               <div className='cardDivider'></div>
-              <div className='cardItem'>
-                <div className='cardDate'>
-                  {new Date(item.updated_at).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
+              <div className='cardFooterContent'>
+                <div className='cardFooterLeft'>
+                  <div className='cardDate'>
+                    {new Date(item.updated_at).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </div>
+                </div>
+                <div className='cardFooterRight'>
+                  <div className='footerButton'>
+                    Add To Cart<Plus size={14} />
+                  </div>
+                  <div className='footerButton' onClick={() => handleCardClick(item)}>
+                    Edit<Pencil size={14} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -77,11 +88,11 @@ function Card({ data }: OverviewProps) {
         ))}
       </div>
       <ProductModal
-              isOpen={showModal}
-              onClose={() => setShowModal(false)}
-              mode="edit"
-              initialData={selectedProduct}
-            />
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        mode="edit"
+        initialData={selectedProduct}
+      />
     </div>
 
   );

@@ -61,88 +61,112 @@ function ProductModal({ isOpen, onClose, mode = 'add', initialData }: ProductMod
     }
 
     return (
-        <Modal show={isOpen} onHide={onClose} centered>
-            <Modal.Header closeButton>
-                <Modal.Title>{mode === 'add' ? 'Add New Product' : 'Edit Product'}</Modal.Title>
+        <Modal show={isOpen} onHide={onClose} centered size="lg" dialogClassName='wideModal'>
+            <Modal.Header closeButton className='modalHeader'>
+                <Modal.Title className='formTitle'>{mode === 'add' ? 'Add New Product' : 'Edit Product'}</Modal.Title>
             </Modal.Header>
 
-            <Modal.Body>
+            <Modal.Body className='modalBody'>
                 <Form>
-                    <Form.Group>
-                        <Form.Label>Product Name</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Enter product name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
+                    <div className="modalFormGrid">
+                        <div className="modalLeft">
+                            <Form.Group>
+                                <Form.Label className="formLabel">Product Name</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter product name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    className="formInput"
+                                />
+                            </Form.Group>
 
-                    <Form.Group >
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control
-                            as="textarea"
-                            rows={3}
-                            placeholder="Enter description"
-                            name="description"
-                            value={formData.description}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
+                            <Form.Group>
+                                <Form.Label className="formLabel">Description</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={5}
+                                    placeholder="Enter description"
+                                    name="description"
+                                    value={formData.description}
+                                    onChange={handleChange}
+                                    className="formInput"
+                                />
+                            </Form.Group>
+                        </div>
+                        <div className="modalRight">
+                            <Form.Group>
+                                <Form.Label className="formLabel">Quantity</Form.Label>
+                                <Form.Control
+                                    type="number"
+                                    placeholder="Enter quantity"
+                                    name="quantity"
+                                    value={formData.quantity}
+                                    onChange={handleChange}
+                                    className="formInput"
+                                />
+                            </Form.Group>
 
-                    <Form.Group >
-                        <Form.Label>Quantity</Form.Label>
-                        <Form.Control
-                            type="number"
-                            placeholder="Enter quantity"
-                            name="quantity"
-                            value={formData.quantity}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
+                            <Form.Group>
+                                <Form.Label className="formLabel">Price</Form.Label>
+                                <Form.Control
+                                    type="number"
+                                    placeholder="Enter price"
+                                    name="price"
+                                    value={formData.price}
+                                    onChange={handleChange}
+                                    className="formInput"
+                                />
+                            </Form.Group>
 
-                    <Form.Group >
-                        <Form.Label>Price</Form.Label>
-                        <Form.Control
-                            type="number"
-                            placeholder="Enter price"
-                            name="price"
-                            value={formData.price}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
+                            <Form.Group>
+                                <Form.Label className="formLabel">Category</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter category"
+                                    name="category"
+                                    value={formData.category}
+                                    onChange={handleChange}
+                                    className="formInput"
+                                />
+                            </Form.Group>
 
-                    <Form.Group >
-                        <Form.Label>Category</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Enter category"
-                            name="category"
-                            value={formData.category}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
-
-                    <Form.Group >
-                        <Form.Label>Status</Form.Label>
-                        <Form.Select
-                            name="status"
-                            value={formData.status}
-                            onChange={handleChange}
-                        >
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                            <option value="archived">Archived</option>
-                        </Form.Select>
-                    </Form.Group>
+                            <Form.Group>
+                                <Form.Label className="formLabel">Status</Form.Label>
+                                <Form.Select
+                                    name="status"
+                                    value={formData.status}
+                                    onChange={handleChange}
+                                    className="formInput"
+                                >
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="archived">Archived</option>
+                                </Form.Select>
+                            </Form.Group>
+                        </div>
+                    </div>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={onClose}>
+                <Button variant="secondary" onClick={onClose} className='formButton'>
                     Cancel
                 </Button>
-                <Button variant="primary" onClick={handleSave}>
+                {mode === 'edit' && (
+                    <Button
+                        variant="danger"
+                        onClick={() => {
+                            console.log('Delete product:', formData.name);
+                            // TODO: replace with your actual delete logic later
+                            onClose();
+                        }}
+                        className="formButton"
+                    >
+                        Delete
+                    </Button>
+                )}
+                <Button variant="primary" onClick={handleSave} className='formButton'>
                     {mode === 'add' ? 'Save Product' : 'Update Product'}
                 </Button>
             </Modal.Footer>

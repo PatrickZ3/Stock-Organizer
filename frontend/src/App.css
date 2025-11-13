@@ -243,7 +243,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 4px;
   cursor: pointer;
 }
 
@@ -353,7 +353,7 @@
   border-radius: var(--border-radius);
   background-color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px 30px;
+  padding: 8px 30px;
 }
 
 .dropDownItemStatus .dropdown-item {
@@ -449,7 +449,7 @@
   justify-content: flex-end;
   font-family: "Tatsuki";
   font-size: 1.7rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0px 5px;
   border-radius: var(--border-radius);
   color: var(--active-text);
   align-items: center;
@@ -474,7 +474,6 @@
 }
 
 .cardDescription{
-  margin-top: 1rem;
   font-family: "Tatsuki";
   font-size: 1.8rem;
 }
@@ -520,4 +519,100 @@
   color: #6b7280;
   text-align: left;
   margin-top: 0.5rem;
+}
+
+
+.cardFooterContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardFooterLeft{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cardFooterRight{
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  gap: 10px;
+  margin: 0.8rem 0.5rem 0.5rem  0.5rem;
+}
+
+.footerButton{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  background-color: white;
+  border: 1px solid  #e0e0e0;
+  padding: 3px 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: "Tatsuki";
+  font-size: 1.3rem;  
+  gap: 6px;
+}
+
+.footerButton:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.footerButton:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader{
+  padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+.modalBody{
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+.formTitle{
+  font-family: "Tatsuki";
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+.formLabel{
+  font-family: "Tatsuki";
+  font-size: 2.5rem;
+}
+
+.formInput{
+  font-family: "Tatsuki";
+  font-size: 2rem;
+}
+
+.modalFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.modalLeft, .modalRight {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.wideModal {
+  max-width: 900px ;
+  width: 90%; 
+}
+
+.formButton{
+  font-family: "Tatsuki";
+  font-size: 2rem;
+  padding: 0rem 1rem 0rem 1rem;
+
 }
